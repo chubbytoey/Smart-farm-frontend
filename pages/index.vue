@@ -2,15 +2,20 @@
   <div class="container">
     <div>
       <h1 class="title">
-        ChubbyFARM
+        Smart FARM
       </h1>
-      <img src="../assets/line-mockup.png">
+      <LineChart />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import LineChart from '../components/LineChart'
+export default {
+  components: {
+    LineChart
+  }
+}
 </script>
 
 <style>
@@ -21,5 +26,13 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+@media screen and (max-width: 414px) {
+  .title{
+    color:red;
+  }
+  .imgBG {
+    width: 100%;
+  }
 }
 </style>
