@@ -1,10 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">
-        Smart FARM
-      </h1>
-      <LineChart />
+      <LineChart class="chart"/>
     </div>
   </div>
 </template>
@@ -18,21 +15,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: center;
 }
 @media screen and (max-width: 414px) {
-  .title{
-    color:red;
-  }
-  .imgBG {
-    width: 100%;
+  .container {
+    width: 100vw;
+    & > .chart {
+      margin: 0 20px;
+    }
   }
 }
 </style>

@@ -16,11 +16,25 @@ export default {
         ],
         datasets: [
           {
-            label: 'temperature',
+            label: 'max',
             data: [2, 10, 5, 9, 0, 6, 20],
             backgroundColor: 'transparent',
-            borderColor: 'rgba(1, 116, 188, 0.50)',
-            pointBackgroundColor: 'rgba(171, 71, 188, 1)'
+            borderColor: 'rgba(255, 0,0, 0.35)',
+            pointBackgroundColor: 'rgba(255, 0, 0)'
+          },
+          {
+            label: 'min',
+            data: [10, 20, 30, 39, 10, 3, 39],
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(0, 231, 255, 0.35)',
+            pointBackgroundColor: 'rgba(0, 231, 255)'
+          },
+          {
+            label: 'min',
+            data: [30, 2, 13, 8, 3, 48, 20],
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(300, 220, 124,0.35)',
+            pointBackgroundColor: 'rgba(300, 220, 124)'
           }
         ]
       },
