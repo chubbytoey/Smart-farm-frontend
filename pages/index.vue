@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="chartContainer">
-      {{ userId }}
+      {{userId}}
       <LineChart :data="tempDataOneWeek" class="chart" width="330px" height="300px" />
     </div>
   </div>
@@ -377,13 +377,12 @@ export default {
     }
   },
   mounted () {
-    liff.init({ liffId: '1655333615-yXk8Qnjg' }, () => {
+    liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
       if (liff.isLoggedIn()) {
         liff.getProfile().then((profile) => {
           console.log(profile.userId)
           const userId = profile.userId
           this.userId = userId
-          // call API ส่ง userId ไป เพื่อเอา farmId มา
         }).catch(err => console.log(err))
       } else {
         liff.login()
