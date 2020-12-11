@@ -413,13 +413,14 @@ export default {
           }
         ]
       }
+      console.log(this.tempDataOneWeek.datasets[0].data, 'twstt')
     },
     fillDatasets (input) {
       const text = input
       const dataMock = []
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
-        dataMock.push(value.device[0].temperature[0].text)
+        dataMock.push(value.device[0].temperature[0].max)
       })
       console.log(text, ' : ', dataMock)
       return dataMock
