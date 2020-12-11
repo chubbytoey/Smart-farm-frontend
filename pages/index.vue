@@ -311,7 +311,6 @@ export default {
   },
   methods: {
     fillData () {
-      console.log('yahoo')
       this.tempDataOneWeek = {
         labels: [
           'day 1',
@@ -342,7 +341,6 @@ export default {
           }
         }
       }
-      console.log(dataMock)
       return dataMock
     }
   }
