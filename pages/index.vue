@@ -1,312 +1,394 @@
 <template>
   <div class="container">
     <div class="chartContainer">
+      {{ userId }}
       <LineChart :data="tempDataOneWeek" class="chart" width="330px" height="300px" />
     </div>
   </div>
 </template>
 
 <script>
+import liff from '@line/liff'
 import LineChart from '../components/LineChart'
+
 export default {
   components: {
     LineChart
   },
   data () {
     return {
-      tempRawOneWeek: [
+      userId: '',
+      tempRawOneWeek:
         {
           status: 200,
-          data: [
-            {
-              id_device: '1',
-              type: 'temp',
-              value: {
-                avg: 12,
-                max: 23,
-                min: 21
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'humidity',
-              value: {
-                avg: 30,
-                max: 120,
-                min: 31
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pm_1',
-              value: {
-                avg: 30,
-                max: 24,
-                min: 12
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pm_10',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pm_25',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'wind_velocity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pressure',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-
-            {
-              id_device: '1',
-              type: 'temp',
-              value: {
-                avg: 50,
-                max: 22,
-                min: 25
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'humidity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pm_1',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pm_10',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pm_25',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'wind_velocity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '1',
-              type: 'pressure',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'temp',
-              value: {
-                avg: 94,
-                max: 48,
-                min: 94
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'humidity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pm_1',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pm_10',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pm_25',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'wind_velocity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pressure',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-12-05T13:42:00Z'
-            },
-
-            {
-              id_device: '2',
-              type: 'temp',
-              value: {
-                avg: 23,
-                max: 62,
-                min: 41
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'humidity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pm_1',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pm_10',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pm_25',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'wind_velocity',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
-            },
-            {
-              id_device: '2',
-              type: 'pressure',
-              value: {
-                avg: 20,
-                max: 20,
-                min: 20
-              },
-              timestamp: '2020-11-05T13:42:00Z'
+          data: {
+            dataInOneWeek: {
+              data: {
+                dataOn1stDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 56,
+                          max_humudity: 99,
+                          avg_humudity: 87
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 59,
+                          max_humudity: 78,
+                          avg_humudity: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 13,
+                          max_pm_1: 51,
+                          avg_pm_1: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 4,
+                          max_pm_1: 50,
+                          avg_pm_1: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 12,
+                          max_wind_velocity: 22,
+                          avg_wind_velocity: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 10,
+                          max_pressure: 100,
+                          avg_pressure: 50
+                        }
+                      ]
+                    }
+                  ]
+                },
+                dataOn2ndDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 20,
+                          max_humudity: 200,
+                          avg_humudity: 50
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 30,
+                          max_humudity: 300,
+                          avg_humudity: 60
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 70
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 50,
+                          max_wind_velocity: 500,
+                          avg_wind_velocity: 80
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 60,
+                          max_pressure: 600,
+                          avg_pressure: 90
+                        }
+                      ]
+                    }
+                  ]
+                },
+                dataOn3rdDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 20,
+                          max_humudity: 200,
+                          avg_humudity: 50
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 30,
+                          max_humudity: 300,
+                          avg_humudity: 60
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 70
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 50,
+                          max_wind_velocity: 500,
+                          avg_wind_velocity: 80
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 60,
+                          max_pressure: 600,
+                          avg_pressure: 90
+                        }
+                      ]
+                    }
+                  ]
+                },
+                dataOn4thDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 20,
+                          max_humudity: 200,
+                          avg_humudity: 50
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 30,
+                          max_humudity: 300,
+                          avg_humudity: 60
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 70
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 50,
+                          max_wind_velocity: 500,
+                          avg_wind_velocity: 80
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 60,
+                          max_pressure: 600,
+                          avg_pressure: 90
+                        }
+                      ]
+                    }
+                  ]
+                },
+                dataOn5thDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 20,
+                          max_humudity: 200,
+                          avg_humudity: 50
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 30,
+                          max_humudity: 300,
+                          avg_humudity: 60
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 70
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 50,
+                          max_wind_velocity: 500,
+                          avg_wind_velocity: 80
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 60,
+                          max_pressure: 600,
+                          avg_pressure: 90
+                        }
+                      ]
+                    }
+                  ]
+                },
+                dataOn6thDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 20,
+                          max_humudity: 200,
+                          avg_humudity: 50
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 30,
+                          max_humudity: 300,
+                          avg_humudity: 60
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 70
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 50,
+                          max_wind_velocity: 500,
+                          avg_wind_velocity: 80
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 60,
+                          max_pressure: 600,
+                          avg_pressure: 90
+                        }
+                      ]
+                    }
+                  ]
+                },
+                dataOn7thDay: {
+                  device: [
+                    {
+                      device_id: 'jzo',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min_humudity: 20,
+                          max_humudity: 200,
+                          avg_humudity: 50
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min_humudity: 30,
+                          max_humudity: 300,
+                          avg_humudity: 60
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min_pm_1: 40,
+                          max_pm_1: 400,
+                          avg_pm_1: 70
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min_wind_velocity: 50,
+                          max_wind_velocity: 500,
+                          avg_wind_velocity: 80
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min_pressure: 60,
+                          max_pressure: 600,
+                          avg_pressure: 90
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
             }
-          ]
-        }
-      ],
+          }
+        },
       tempDataOneWeek: null
     }
   },
   mounted () {
+    liff.init({ liffId: '1655333615-yXk8Qnjg' }, () => {
+      if (liff.isLoggedIn()) {
+        liff.getProfile().then((profile) => {
+          console.log(profile.userId)
+          const userId = profile.userId
+          this.userId = userId
+          // call API ส่ง userId ไป เพื่อเอา farmId มา
+        }).catch(err => console.log(err))
+      } else {
+        liff.login()
+      }
+    }, err => console.error(err.code, err.message))
     this.fillData()
   },
   methods: {
@@ -334,13 +416,22 @@ export default {
     },
     fillDatasets () {
       const dataMock = []
-      for (let j = 0; j < this.tempRawOneWeek[0].data.length; j++) {
-        if (this.tempRawOneWeek[0].data[j].id_device === '1') {
-          if (this.tempRawOneWeek[0].data[j].type === 'temp') {
-            dataMock.push(this.tempRawOneWeek[0].data[j].value.avg)
-          }
-        }
-      }
+      // for (let j = 0; j < this.tempRawOneWeek[0].data.dataInOneWeek.data; j++) {
+      //   if (this.tempRawOneWeek[0].data[j].id_device === '1') {
+      //     if (this.tempRawOneWeek[0].data[j].type === 'temp') {
+      //       dataMock.push(this.tempRawOneWeek[0].data[j].value.avg)
+      //     }
+      //   }
+      // }
+      console.log(Object.values(this.tempRawOneWeek.data.dataInOneWeek.data))
+      const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
+      console.log('test', Object.values(apiData).forEach((value, key) => {
+        console.log(value.device[0].temperature[0].max_humudity, '++++', key)
+      }))
+
+      // for (const [key, value] of Object.entries(apiData)) {
+      //   console.log(`${key}: ${value}`)
+      // }
       return dataMock
     }
   }
