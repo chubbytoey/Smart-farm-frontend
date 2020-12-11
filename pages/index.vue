@@ -2,6 +2,7 @@
   <div class="container">
     <div class="chartContainer">
       {{ userId }}
+      <label>plz</label>
       <LineChart :data="tempDataOneWeek" class="chart" width="330px" height="300px" />
     </div>
   </div>
