@@ -2,7 +2,6 @@
   <div class="container">
     <div class="chartContainer">
       {{ userId }}
-      <label>plz</label>
       <LineChart :data="tempDataOneWeek" class="chart" width="330px" height="300px" />
     </div>
   </div>
@@ -423,12 +422,15 @@ export default {
       //     }
       //   }
       // }
-      console.log(Object.values(this.tempRawOneWeek.data.dataInOneWeek.data))
+      // console.log(Object.values(this.tempRawOneWeek.data.dataInOneWeek.data))
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
+      // const finshResult = Object.values(apiData).forEach((value,key) => {
+
+      // })
       console.log('test', Object.values(apiData).forEach((value, key) => {
         console.log(value.device[0].temperature[0].max_humudity, '++++', key)
       }))
-
+      console.log('hey')
       // for (const [key, value] of Object.entries(apiData)) {
       //   console.log(`${key}: ${value}`)
       // }
