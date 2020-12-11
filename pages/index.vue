@@ -1,15 +1,20 @@
 <template>
   <div class="container">
     <div class="chartContainer">
-      {{ userId }}
-      <label>plz</label>
+      <!-- {{ userId }} -->
       <LineChart :data="tempDataOneWeek" class="chart" width="330px" height="300px" />
+    </div>
+    <div class="copyContainer">
+      <input id="copyText" type="text" value="https://liff.line.me/1655371433-VdNEZGNE">
+      <button @click="copyLink">
+        Copy
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import liff from '@line/liff'
+// import liff from '@line/liff'
 import LineChart from '../components/LineChart'
 
 export default {
@@ -18,7 +23,7 @@ export default {
   },
   data () {
     return {
-      userId: '',
+      // userId: '',
       tempRawOneWeek:
         {
           status: 200,
@@ -378,17 +383,17 @@ export default {
     }
   },
   mounted () {
-    liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
-      if (liff.isLoggedIn()) {
-        liff.getProfile().then((profile) => {
-          console.log(profile.userId)
-          const userId = profile.userId
-          this.userId = userId
-        }).catch(err => console.log(err))
-      } else {
-        liff.login()
-      }
-    }, err => console.error(err.code, err.message))
+    // liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
+    //   if (liff.isLoggedIn()) {
+    //     liff.getProfile().then((profile) => {
+    //       console.log(profile.userId)
+    //       const userId = profile.userId
+    //       this.userId = userId
+    //     }).catch(err => console.log(err))
+    //   } else {
+    //     liff.login()
+    //   }
+    // }, err => console.error(err.code, err.message))
     this.fillData()
   },
   methods: {
@@ -410,20 +415,42 @@ export default {
             backgroundColor: 'transparent',
             borderColor: 'rgba(255, 0,0, 0.35)',
             pointBackgroundColor: 'rgba(255, 0, 0)'
+          },
+          {
+            label: 'min',
+            data: this.fillDatasets('min'),
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(255, 200,0, 0.35)',
+            pointBackgroundColor: 'rgba(255, 200, 0)'
+          },
+          {
+            label: 'avg',
+            data: this.fillDatasets('avg'),
+            backgroundColor: 'transparent',
+            borderColor: 'rgba(96, 168,48, 0.35)',
+            pointBackgroundColor: 'rgba(96, 168,48)'
           }
         ]
       }
-      console.log(this.tempDataOneWeek.datasets[0].data, 'twstt')
     },
     fillDatasets (input) {
-      const text = input
       const dataMock = []
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
-        dataMock.push(value.device[0].temperature[0].max)
+        if (input === 'max') {
+          dataMock.push(value.device[0].temperature[0].max)
+        } else if (input === 'min') {
+          dataMock.push(value.device[0].temperature[0].min)
+        } else {
+          dataMock.push(value.device[0].temperature[0].avg)
+        }
       })
-      console.log(text, ' : ', dataMock)
       return dataMock
+    },
+    copyLink () {
+      const link = document.querySelector('#copyText')
+      link.select()
+      document.execCommand('copy')
     }
   }
 }
@@ -435,11 +462,27 @@ export default {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  flex-direction: column;
 }
 @media screen and (max-width: 414px) {
   .container {
     width: 100vw;
+    & > .copyContainer{
+      margin-top: 20px;
+      & > input {
+        border: 1px solid rgba(0,0,0,0.25);
+        border-radius: 4px;
+        padding: 2px 5px;
+      }
+      & > button {
+        background-color: #4EA72EFF;
+        border: none;
+        color: #fff;
+        border-radius: 4px;
+        width: 54px;
+      }
+    }
     & > .chartContainer {
       margin:0 auto;
     }
