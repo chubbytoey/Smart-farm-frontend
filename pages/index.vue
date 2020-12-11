@@ -425,16 +425,17 @@ export default {
       // }
       // console.log(Object.values(this.tempRawOneWeek.data.dataInOneWeek.data))
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
-      // const finshResult = Object.values(apiData).forEach((value,key) => {
-
-      // })
-      console.log('test', Object.values(apiData).forEach((value, key) => {
-        console.log(value.device[0].temperature[0].max_humudity, '++++', key)
-      }))
-      console.log('hey' + this.userId)
+      Object.values(apiData).forEach((value, key) => {
+        dataMock.push(value.device[0].temperature[0].max_humudity)
+      })
+      // console.log('test', Object.values(apiData).forEach((value, key) => {
+      //   console.log(value.device[0].temperature[0].max_humudity, '++++', key)
+      // }))
+      // console.log('hey' + this.userId)
       // for (const [key, value] of Object.entries(apiData)) {
       //   console.log(`${key}: ${value}`)
       // }
+      console.log(dataMock)
       return dataMock
     }
   }
