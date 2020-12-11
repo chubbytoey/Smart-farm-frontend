@@ -430,7 +430,7 @@ export default {
       console.log('test', Object.values(apiData).forEach((value, key) => {
         console.log(value.device[0].temperature[0].max_humudity, '++++', key)
       }))
-      console.log('hey')
+      console.log('hey' + this.userId)
       // for (const [key, value] of Object.entries(apiData)) {
       //   console.log(`${key}: ${value}`)
       // }
