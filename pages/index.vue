@@ -32,57 +32,57 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 56,
-                          max_humudity: 99,
-                          avg_humudity: 87
+                          min: 56,
+                          max: 99,
+                          avg: 87
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 59,
-                          max_humudity: 78,
-                          avg_humudity: 79
+                          min: 59,
+                          max: 78,
+                          avg: 79
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 13,
-                          max_pm_1: 51,
-                          avg_pm_1: 79
+                          min: 13,
+                          max: 51,
+                          avg: 79
                         }
                       ],
                       pm_10: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 120
+                          min: 40,
+                          max: 400,
+                          avg: 120
                         }
                       ],
                       pm_25: [
                         {
                           device_id: 1,
-                          min_pm_1: 4,
-                          max_pm_1: 50,
-                          avg_pm_1: 25
+                          min: 4,
+                          max: 50,
+                          avg: 25
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 12,
-                          max_wind_velocity: 22,
-                          avg_wind_velocity: 32
+                          min: 12,
+                          max: 22,
+                          avg: 32
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 10,
-                          max_pressure: 100,
-                          avg_pressure: 50
+                          min: 10,
+                          max: 100,
+                          avg: 50
                         }
                       ]
                     }
@@ -95,41 +95,41 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 20,
-                          max_humudity: 200,
-                          avg_humudity: 50
+                          min: 20,
+                          max: 200,
+                          avg: 50
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 30,
-                          max_humudity: 300,
-                          avg_humudity: 60
+                          min: 30,
+                          max: 300,
+                          avg: 60
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 70
+                          min: 40,
+                          max: 400,
+                          avg: 70
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 50,
-                          max_wind_velocity: 500,
-                          avg_wind_velocity: 80
+                          min: 50,
+                          max: 500,
+                          avg: 80
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 60,
-                          max_pressure: 600,
-                          avg_pressure: 90
+                          min: 60,
+                          max: 600,
+                          avg: 90
                         }
                       ]
                     }
@@ -142,41 +142,41 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 10,
-                          max_humudity: 22,
-                          avg_humudity: 20
+                          min: 10,
+                          max: 22,
+                          avg: 20
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 30,
-                          max_humudity: 300,
-                          avg_humudity: 60
+                          min: 30,
+                          max: 300,
+                          avg: 60
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 70
+                          min: 40,
+                          max: 400,
+                          avg: 70
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 50,
-                          max_wind_velocity: 500,
-                          avg_wind_velocity: 80
+                          min: 50,
+                          max: 500,
+                          avg: 80
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 60,
-                          max_pressure: 600,
-                          avg_pressure: 90
+                          min: 60,
+                          max: 600,
+                          avg: 90
                         }
                       ]
                     }
@@ -189,41 +189,41 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 84,
-                          max_humudity: 392,
-                          avg_humudity: 20
+                          min: 84,
+                          max: 392,
+                          avg: 20
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 30,
-                          max_humudity: 300,
-                          avg_humudity: 60
+                          min: 30,
+                          max: 300,
+                          avg: 60
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 70
+                          min: 40,
+                          max: 400,
+                          avg: 70
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 50,
-                          max_wind_velocity: 500,
-                          avg_wind_velocity: 80
+                          min: 50,
+                          max: 500,
+                          avg: 80
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 60,
-                          max_pressure: 600,
-                          avg_pressure: 90
+                          min: 60,
+                          max: 600,
+                          avg: 90
                         }
                       ]
                     }
@@ -236,41 +236,41 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 2,
-                          max_humudity: 340,
-                          avg_humudity: 31
+                          min: 2,
+                          max: 340,
+                          avg: 31
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 30,
-                          max_humudity: 300,
-                          avg_humudity: 60
+                          min: 30,
+                          max: 300,
+                          avg: 60
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 70
+                          min: 40,
+                          max: 400,
+                          avg: 70
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 50,
-                          max_wind_velocity: 500,
-                          avg_wind_velocity: 80
+                          min: 50,
+                          max: 500,
+                          avg: 80
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 60,
-                          max_pressure: 600,
-                          avg_pressure: 90
+                          min: 60,
+                          max: 600,
+                          avg: 90
                         }
                       ]
                     }
@@ -283,41 +283,41 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 24,
-                          max_humudity: 470,
-                          avg_humudity: 99
+                          min: 24,
+                          max: 470,
+                          avg: 99
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 30,
-                          max_humudity: 300,
-                          avg_humudity: 60
+                          min: 30,
+                          max: 300,
+                          avg: 60
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 70
+                          min: 40,
+                          max: 400,
+                          avg: 70
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 50,
-                          max_wind_velocity: 500,
-                          avg_wind_velocity: 80
+                          min: 50,
+                          max: 500,
+                          avg: 80
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 60,
-                          max_pressure: 600,
-                          avg_pressure: 90
+                          min: 60,
+                          max: 600,
+                          avg: 90
                         }
                       ]
                     }
@@ -330,41 +330,41 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 10,
-                          max_humudity: 842,
-                          avg_humudity: 249
+                          min: 10,
+                          max: 842,
+                          avg: 249
                         }
                       ],
                       humidity: [
                         {
                           device_id: 1,
-                          min_humudity: 30,
-                          max_humudity: 300,
-                          avg_humudity: 60
+                          min: 30,
+                          max: 300,
+                          avg: 60
                         }
                       ],
                       pm_1: [
                         {
                           device_id: 1,
-                          min_pm_1: 40,
-                          max_pm_1: 400,
-                          avg_pm_1: 70
+                          min: 40,
+                          max: 400,
+                          avg: 70
                         }
                       ],
                       wind_velocity: [
                         {
                           device_id: 1,
-                          min_wind_velocity: 50,
-                          max_wind_velocity: 500,
-                          avg_wind_velocity: 80
+                          min: 50,
+                          max: 500,
+                          avg: 80
                         }
                       ],
                       pressure: [
                         {
                           device_id: 1,
-                          min_pressure: 60,
-                          max_pressure: 600,
-                          avg_pressure: 90
+                          min: 60,
+                          max: 600,
+                          avg: 90
                         }
                       ]
                     }
@@ -406,7 +406,7 @@ export default {
         datasets: [
           {
             label: 'max',
-            data: this.fillDatasets(),
+            data: this.fillDatasets('max'),
             backgroundColor: 'transparent',
             borderColor: 'rgba(255, 0,0, 0.35)',
             pointBackgroundColor: 'rgba(255, 0, 0)'
@@ -414,28 +414,12 @@ export default {
         ]
       }
     },
-    fillDatasets () {
+    fillDatasets (input) {
       const dataMock = []
-      // for (let j = 0; j < this.tempRawOneWeek[0].data.dataInOneWeek.data; j++) {
-      //   if (this.tempRawOneWeek[0].data[j].id_device === '1') {
-      //     if (this.tempRawOneWeek[0].data[j].type === 'temp') {
-      //       dataMock.push(this.tempRawOneWeek[0].data[j].value.avg)
-      //     }
-      //   }
-      // }
-      // console.log(Object.values(this.tempRawOneWeek.data.dataInOneWeek.data))
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
-        dataMock.push(value.device[0].temperature[0].max_humudity)
+        dataMock.push(value.device[0].temperature[0].input)
       })
-      // console.log('test', Object.values(apiData).forEach((value, key) => {
-      //   console.log(value.device[0].temperature[0].max_humudity, '++++', key)
-      // }))
-      // console.log('hey' + this.userId)
-      // for (const [key, value] of Object.entries(apiData)) {
-      //   console.log(`${key}: ${value}`)
-      // }
-      console.log(dataMock)
       return dataMock
     }
   }
