@@ -420,6 +420,7 @@ export default {
       Object.values(apiData).forEach((value, key) => {
         dataMock.push(value.device[0].temperature[0].input)
       })
+      console.log(input, ' : ', dataMock)
       return dataMock
     }
   }
