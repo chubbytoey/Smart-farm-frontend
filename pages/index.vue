@@ -142,9 +142,9 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 20,
-                          max_humudity: 200,
-                          avg_humudity: 50
+                          min_humudity: 10,
+                          max_humudity: 22,
+                          avg_humudity: 20
                         }
                       ],
                       humidity: [
@@ -189,9 +189,9 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 20,
-                          max_humudity: 200,
-                          avg_humudity: 50
+                          min_humudity: 84,
+                          max_humudity: 392,
+                          avg_humudity: 20
                         }
                       ],
                       humidity: [
@@ -236,9 +236,9 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 20,
-                          max_humudity: 200,
-                          avg_humudity: 50
+                          min_humudity: 2,
+                          max_humudity: 340,
+                          avg_humudity: 31
                         }
                       ],
                       humidity: [
@@ -283,9 +283,9 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 20,
-                          max_humudity: 200,
-                          avg_humudity: 50
+                          min_humudity: 24,
+                          max_humudity: 470,
+                          avg_humudity: 99
                         }
                       ],
                       humidity: [
@@ -330,9 +330,9 @@ export default {
                       temperature: [
                         {
                           device_id: 1,
-                          min_humudity: 20,
-                          max_humudity: 200,
-                          avg_humudity: 50
+                          min_humudity: 10,
+                          max_humudity: 842,
+                          avg_humudity: 249
                         }
                       ],
                       humidity: [
