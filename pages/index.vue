@@ -411,7 +411,7 @@ export default {
             borderColor: 'rgba(255, 0,0, 0.35)',
             pointBackgroundColor: 'rgba(255, 0, 0)'
           }
-        ]m
+        ]
       }
     },
     fillDatasets (input) {
