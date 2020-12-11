@@ -411,14 +411,14 @@ export default {
             borderColor: 'rgba(255, 0,0, 0.35)',
             pointBackgroundColor: 'rgba(255, 0, 0)'
           }
-        ]
+        ]m
       }
     },
     fillDatasets (input) {
       const dataMock = []
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
-        dataMock.push(value.device[0].temperature[0].input)
+        dataMock.push(value.device[0].temperature[0].max)
       })
       console.log(input, ' : ', dataMock)
       return dataMock
