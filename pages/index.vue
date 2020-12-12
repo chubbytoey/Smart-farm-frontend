@@ -1,8 +1,6 @@
 <template>
   <div class="container">
     <div class="chartContainer">
-      <!-- {{ userId }} -->
-      <label v-if="userId !== null">{{ userId }}</label>
       <LineChart :data="tempDataOneWeek" class="chart" width="300px" />
     </div>
     <div class="copyContainer">
@@ -794,7 +792,6 @@ export default {
           }
         },
       tempDataOneWeek: null,
-      // urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
       farmUser: null
     }
   },
@@ -807,19 +804,7 @@ export default {
     }
   },
   mounted () {
-    // liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
-    //   if (liff.isLoggedIn()) {
-    //     liff.getProfile().then((profile) => {
-    //       console.log(profile.userId)
-    //       const userId = profile.userId
-    //       this.userId = userId
-    //     }).catch(err => console.log(err))
-    //   } else {
-    //     liff.login()
-    //   }
-    // }, err => console.error(err.code, err.message))
     this.lineliff()
-    // this.fetchData()
   },
   methods: {
     lineliff () {
