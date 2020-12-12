@@ -2,7 +2,7 @@
   <div class="container">
     <div class="chartContainer">
       <!-- {{ userId }} -->
-      <label v-if="userId !== null">eie</label>
+      <label v-if="userId !== null">{{ userId }}</label>
       <LineChart :data="tempDataOneWeek" class="chart" width="300px" />
     </div>
     <div class="copyContainer">
@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      userId: '',
+      userId: null,
       tempRawOneWeek:
         {
           status: 200,
@@ -794,7 +794,7 @@ export default {
           }
         },
       tempDataOneWeek: null,
-      urlParams: null,
+      urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
       farmUser: null
     }
   },
@@ -809,6 +809,7 @@ export default {
         liff.getProfile().then((profile) => {
           console.log(profile.userId)
           const userId = profile.userId
+          this.userId = userId
           this.urlParams = userId
         }).catch(err => console.log(err))
       } else {
