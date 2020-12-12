@@ -794,7 +794,7 @@ export default {
           }
         },
       tempDataOneWeek: null,
-      urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
+      urlParams: null,
       farmUser: null
     }
   },
@@ -809,7 +809,7 @@ export default {
         liff.getProfile().then((profile) => {
           console.log(profile.userId)
           const userId = profile.userId
-          this.userId = userId
+          this.urlParams = userId
         }).catch(err => console.log(err))
       } else {
         liff.login()
