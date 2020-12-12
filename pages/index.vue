@@ -809,7 +809,7 @@ export default {
   },
   methods: {
     lineliff () {
-      liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
+      liff.init({ liffId: '1655371433-1e8KMA8K' }, () => {
         if (liff.isLoggedIn()) {
           liff.getProfile().then((profile) => {
             console.log('come', profile.userId)
