@@ -818,7 +818,7 @@ export default {
         } else {
           liff.login()
         }
-      }, err => console.error(err.code, err.message))
+      }, err => alert(err.code, err.message))
     },
     fillData () {
       this.tempDataOneWeek = {
