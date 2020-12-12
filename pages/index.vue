@@ -2,7 +2,8 @@
   <div class="container">
     <div class="chartContainer">
       <!-- {{ userId }} -->
-      <LineChart :data="tempDataOneWeek" class="chart" width="330px" height="300px" />
+      {{ farmUser }}
+      <LineChart :data="tempDataOneWeek" class="chart" />
     </div>
     <div class="copyContainer">
       <input id="copyText" type="text" value="https://liff.line.me/1655371433-VdNEZGNE">
@@ -15,6 +16,7 @@
 
 <script>
 // import liff from '@line/liff'
+import axios from 'axios'
 import LineChart from '../components/LineChart'
 
 export default {
@@ -379,7 +381,10 @@ export default {
             }
           }
         },
-      tempDataOneWeek: null
+      tempDataOneWeek: null,
+      urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
+      // urlLink: `https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${urlParams}`,
+      farmUser: null
     }
   },
   mounted () {
@@ -395,6 +400,7 @@ export default {
     //   }
     // }, err => console.error(err.code, err.message))
     this.fillData()
+    this.fetchData()
   },
   methods: {
     fillData () {
@@ -451,6 +457,18 @@ export default {
       const link = document.querySelector('#copyText')
       link.select()
       document.execCommand('copy')
+    },
+    fetchData () {
+      axios.get('https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=U9917a961739c1e7dea7f2b365def5cf5').then((response) => {
+        this.farmUser = response.farm_id
+        console.log('hahah', response)
+      })
+    },
+    fetchData2 () {
+      axios.get('https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=U9917a961739c1e7dea7f2b365def5cf5')
+        .then((response) => {
+          console.log('eiei')
+        })
     }
   }
 }
