@@ -2,8 +2,8 @@
   <div class="container">
     <div class="chartContainer">
       <!-- {{ userId }} -->
-      {{ farmUser }}
-      <LineChart :data="tempDataOneWeek" class="chart" />
+      <label v-if="userId !== null">eie</label>
+      <LineChart :data="tempDataOneWeek" class="chart" width="300px" />
     </div>
     <div class="copyContainer">
       <input id="copyText" type="text" value="https://liff.line.me/1655371433-VdNEZGNE">
@@ -15,8 +15,7 @@
 </template>
 
 <script>
-// import liff from '@line/liff'
-import axios from 'axios'
+import liff from '@line/liff'
 import LineChart from '../components/LineChart'
 
 export default {
@@ -25,7 +24,7 @@ export default {
   },
   data () {
     return {
-      // userId: '',
+      userId: '',
       tempRawOneWeek:
         {
           status: 200,
@@ -383,23 +382,26 @@ export default {
         },
       tempDataOneWeek: null,
       urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
-      // urlLink: `https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${urlParams}`,
       farmUser: null
     }
   },
+  watch: {
+    farmUser () {
+      this.fillData()
+    }
+  },
   mounted () {
-    // liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
-    //   if (liff.isLoggedIn()) {
-    //     liff.getProfile().then((profile) => {
-    //       console.log(profile.userId)
-    //       const userId = profile.userId
-    //       this.userId = userId
-    //     }).catch(err => console.log(err))
-    //   } else {
-    //     liff.login()
-    //   }
-    // }, err => console.error(err.code, err.message))
-    this.fillData()
+    liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
+      if (liff.isLoggedIn()) {
+        liff.getProfile().then((profile) => {
+          console.log(profile.userId)
+          const userId = profile.userId
+          this.userId = userId
+        }).catch(err => console.log(err))
+      } else {
+        liff.login()
+      }
+    }, err => console.error(err.code, err.message))
     this.fetchData()
   },
   methods: {
@@ -444,11 +446,11 @@ export default {
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
         if (input === 'max') {
-          dataMock.push(value.device[0].temperature[0].max)
+          dataMock.push(value.device[this.farmUser].temperature[0].max)
         } else if (input === 'min') {
-          dataMock.push(value.device[0].temperature[0].min)
+          dataMock.push(value.device[this.farmUser].temperature[0].min)
         } else {
-          dataMock.push(value.device[0].temperature[0].avg)
+          dataMock.push(value.device[this.farmUser].temperature[0].avg)
         }
       })
       return dataMock
@@ -459,16 +461,8 @@ export default {
       document.execCommand('copy')
     },
     fetchData () {
-      axios.get('https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=U9917a961739c1e7dea7f2b365def5cf5').then((response) => {
-        this.farmUser = response.farm_id
-        console.log('hahah', response)
-      })
-    },
-    fetchData2 () {
-      axios.get('https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=U9917a961739c1e7dea7f2b365def5cf5')
-        .then((response) => {
-          console.log('eiei')
-        })
+      fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${this.urlParams}`)
+        .then(res => res.json()).then((res) => { this.farmUser = res.farm_id - 1 })
     }
   }
 }
