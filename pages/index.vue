@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="chartContainer">
-      <label v-if="userId !== null">hehehe</label>
-      <LineChart :data="tempDataOneWeek" class="chart" width="300px" />
+      <label v-if="userId">{{ userId }}</label>
+      <LineChart :data="tempDataOneWeek" class="chart" :width="300" />
     </div>
     <div class="copyContainer">
       <input id="copyText" type="text" value="https://liff.line.me/1655371433-VdNEZGNE">
@@ -812,11 +812,9 @@ export default {
       liff.init({ liffId: '1655371433-1e8KMA8K' }, () => {
         if (liff.isLoggedIn()) {
           liff.getProfile().then((profile) => {
-            console.log('come', profile.userId)
-            const userId = profile.userId
-            this.userId = userId
-            this.fetchData(userId)
-          }).catch(err => console.log(err))
+            this.userId = profile.userId
+            this.fetchData(this.userId)
+          }).catch(err => alert(err))
         } else {
           liff.login()
         }
