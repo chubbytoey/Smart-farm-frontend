@@ -798,11 +798,11 @@ export default {
       farmUser: null
     }
   },
-  // watch: {
-  //   farmUser () {
-  //     this.fillData()
-  //   }
-  // },
+  watch: {
+    farmUser () {
+      this.fillData()
+    }
+  },
   mounted () {
     liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
       if (liff.isLoggedIn()) {
