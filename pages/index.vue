@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="chartContainer">
+      <label v-if="userId !== null">hehehe</label>
       <LineChart :data="tempDataOneWeek" class="chart" width="300px" />
     </div>
     <div class="copyContainer">
