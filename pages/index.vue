@@ -91,6 +91,65 @@ export default {
                           avg: 50
                         }
                       ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 2,
+                          max: 100,
+                          avg: 30
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
+                        }
+                      ]
                     }
                   ]
                 },
@@ -136,6 +195,65 @@ export default {
                           min: 60,
                           max: 600,
                           avg: 90
+                        }
+                      ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 1000,
+                          max: 23,
+                          avg: 90
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
                         }
                       ]
                     }
@@ -185,6 +303,65 @@ export default {
                           avg: 90
                         }
                       ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 34,
+                          max: 131,
+                          avg: 3412
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
+                        }
+                      ]
                     }
                   ]
                 },
@@ -230,6 +407,65 @@ export default {
                           min: 60,
                           max: 600,
                           avg: 90
+                        }
+                      ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 120,
+                          avg: 300
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
                         }
                       ]
                     }
@@ -279,6 +515,65 @@ export default {
                           avg: 90
                         }
                       ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 230,
+                          avg: 300
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
+                        }
+                      ]
                     }
                   ]
                 },
@@ -326,6 +621,65 @@ export default {
                           avg: 90
                         }
                       ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 310,
+                          avg: 3222
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
+                        }
+                      ]
                     }
                   ]
                 },
@@ -371,6 +725,65 @@ export default {
                           min: 60,
                           max: 600,
                           avg: 90
+                        }
+                      ]
+                    },
+                    {
+                      device_id: 'toey',
+                      temperature: [
+                        {
+                          device_id: 1,
+                          min: 23,
+                          max: 510,
+                          avg: 1320
+                        }
+                      ],
+                      humidity: [
+                        {
+                          device_id: 1,
+                          min: 59,
+                          max: 78,
+                          avg: 79
+                        }
+                      ],
+                      pm_1: [
+                        {
+                          device_id: 1,
+                          min: 13,
+                          max: 51,
+                          avg: 79
+                        }
+                      ],
+                      pm_10: [
+                        {
+                          device_id: 1,
+                          min: 40,
+                          max: 400,
+                          avg: 120
+                        }
+                      ],
+                      pm_25: [
+                        {
+                          device_id: 1,
+                          min: 4,
+                          max: 50,
+                          avg: 25
+                        }
+                      ],
+                      wind_velocity: [
+                        {
+                          device_id: 1,
+                          min: 12,
+                          max: 22,
+                          avg: 32
+                        }
+                      ],
+                      pressure: [
+                        {
+                          device_id: 1,
+                          min: 10,
+                          max: 100,
+                          avg: 50
                         }
                       ]
                     }
