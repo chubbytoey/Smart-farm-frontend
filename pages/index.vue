@@ -798,11 +798,11 @@ export default {
       farmUser: null
     }
   },
-  watch: {
-    farmUser () {
-      this.fillData()
-    }
-  },
+  // watch: {
+  //   farmUser () {
+  //     this.fillData()
+  //   }
+  // },
   mounted () {
     liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
       if (liff.isLoggedIn()) {
@@ -816,6 +816,7 @@ export default {
       }
     }, err => console.error(err.code, err.message))
     this.fetchData()
+    this.fillData()
   },
   methods: {
     fillData () {
@@ -875,7 +876,10 @@ export default {
     },
     fetchData () {
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${this.userId}`)
-        .then(res => res.json()).then((res) => { this.farmUser = res.farm_id - 1 })
+        .then(res => res.json()).then((res) => {
+          this.farmUser = res.farm_id - 1
+          console.log(this.userId)
+        })
     }
   }
 }
