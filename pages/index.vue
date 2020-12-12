@@ -799,26 +799,42 @@ export default {
     }
   },
   watch: {
+    userId () {
+      this.fetchData()
+    },
     farmUser () {
       this.fillData()
     }
   },
   mounted () {
-    liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
-      if (liff.isLoggedIn()) {
-        liff.getProfile().then((profile) => {
-          console.log(profile.userId)
-          const userId = profile.userId
-          this.userId = userId
-        }).catch(err => console.log(err))
-      } else {
-        liff.login()
-      }
-    }, err => console.error(err.code, err.message))
-    this.fetchData()
-    this.fillData()
+    // liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
+    //   if (liff.isLoggedIn()) {
+    //     liff.getProfile().then((profile) => {
+    //       console.log(profile.userId)
+    //       const userId = profile.userId
+    //       this.userId = userId
+    //     }).catch(err => console.log(err))
+    //   } else {
+    //     liff.login()
+    //   }
+    // }, err => console.error(err.code, err.message))
+    this.lineliff()
+    // this.fetchData()
   },
   methods: {
+    lineliff () {
+      liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
+        if (liff.isLoggedIn()) {
+          liff.getProfile().then((profile) => {
+            console.log(profile.userId)
+            const userId = profile.userId
+            this.userId = userId
+          }).catch(err => console.log(err))
+        } else {
+          liff.login()
+        }
+      }, err => console.error(err.code, err.message))
+    },
     fillData () {
       this.tempDataOneWeek = {
         labels: [
@@ -877,8 +893,8 @@ export default {
     fetchData () {
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${this.userId}`)
         .then(res => res.json()).then((res) => {
-          this.farmUser = res.farm_id - 1
           console.log(this.userId)
+          this.farmUser = res.farm_id - 1
         })
     }
   }
