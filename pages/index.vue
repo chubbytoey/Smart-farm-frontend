@@ -794,7 +794,7 @@ export default {
           }
         },
       tempDataOneWeek: null,
-      urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
+      // urlParams: 'U9917a961739c1e7dea7f2b365def5cf5',
       farmUser: null
     }
   },
@@ -810,7 +810,6 @@ export default {
           console.log(profile.userId)
           const userId = profile.userId
           this.userId = userId
-          this.urlParams = userId
         }).catch(err => console.log(err))
       } else {
         liff.login()
@@ -875,7 +874,7 @@ export default {
       document.execCommand('copy')
     },
     fetchData () {
-      fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${this.urlParams}`)
+      fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${this.userId}`)
         .then(res => res.json()).then((res) => { this.farmUser = res.farm_id - 1 })
     }
   }
