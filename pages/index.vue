@@ -812,7 +812,7 @@ export default {
       liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
         if (liff.isLoggedIn()) {
           liff.getProfile().then((profile) => {
-            console.log(profile.userId)
+            console.log('come', profile.userId)
             const userId = profile.userId
             this.userId = userId
             this.fetchData(userId)
@@ -880,7 +880,7 @@ export default {
     fetchData (userID) {
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
-          console.log(this.userID)
+          console.log('on', userID)
           this.farmUser = res.farm_id - 1
         })
     }
