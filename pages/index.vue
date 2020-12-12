@@ -815,7 +815,7 @@ export default {
             console.log(profile.userId)
             const userId = profile.userId
             this.userId = userId
-            this.fetchData()
+            this.fetchData(userId)
           }).catch(err => console.log(err))
         } else {
           liff.login()
@@ -877,10 +877,10 @@ export default {
       link.select()
       document.execCommand('copy')
     },
-    fetchData () {
-      fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${this.userId}`)
+    fetchData (userID) {
+      fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
-          console.log(this.userId)
+          console.log(this.userID)
           this.farmUser = res.farm_id - 1
         })
     }
