@@ -797,9 +797,9 @@ export default {
     }
   },
   watch: {
-    userId () {
-      this.fetchData()
-    },
+    // userId () {
+    //   this.fetchData()
+    // },
     farmUser () {
       this.fillData()
     }
@@ -815,6 +815,7 @@ export default {
             console.log(profile.userId)
             const userId = profile.userId
             this.userId = userId
+            this.fetchData()
           }).catch(err => console.log(err))
         } else {
           liff.login()
