@@ -805,7 +805,7 @@ export default {
     }
   },
   async beforeMount () {
-    await liff.init({ liffId: '1655371433-e37obQ7o' })
+    await liff.init({ liffId: '1655371433-VdNEZGNE' })
   },
   async mounted () {
     if (!liff.isLoggedIn()) { return liff.login() }
