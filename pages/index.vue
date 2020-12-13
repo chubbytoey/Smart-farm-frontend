@@ -807,13 +807,13 @@ export default {
   created () {
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
-        if (!liff.isLoggedIn()) { liff.login() }
+        if (!liff.isLoggedIn()) { return liff.login() }
+
+        return liff.getProfile().then((profile) => {
+          this.userId = profile.userId
+          this.fetchData(this.userId)
+        })
       }).catch(err => console.log(err))
-  },
-  async mounted () {
-    const profile = await liff.getProfile()
-    this.userId = profile.userId
-    this.fetchData(this.userId)
   },
   methods: {
     fillData () {
