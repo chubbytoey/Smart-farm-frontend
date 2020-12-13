@@ -808,7 +808,7 @@ export default {
     await liff.init({ liffId: '1655371433-VdNEZGNE' })
   },
   async mounted () {
-    if (!liff.isLoggedIn() && liff.getOS() === 'web') { return liff.login() }
+    if (!liff.isLoggedIn()) { liff.login() }
 
     const profile = await liff.getProfile()
     this.userId = profile.userId
