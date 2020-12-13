@@ -804,22 +804,17 @@ export default {
       this.fillData()
     }
   },
-  mounted () {
-    this.lineliff()
+  async beforeMount () {
+    await liff.init({ liffId: '1655371433-e37obQ7o' })
+  },
+  async mounted () {
+    if (!liff.isLoggedIn()) { return liff.login() }
+
+    const profile = await liff.getProfile()
+    this.userId = profile.userId
+    this.fetchData(this.userId)
   },
   methods: {
-    lineliff () {
-      liff.init({ liffId: '1655371433-VdNEZGNE' }, () => {
-        if (liff.isLoggedIn()) {
-          liff.getProfile().then((profile) => {
-            this.userId = profile.userId
-            this.fetchData(this.userId)
-          }).catch(err => alert(err))
-        } else {
-          liff.login()
-        }
-      }, err => alert(err.code, err.message))
-    },
     fillData () {
       this.tempDataOneWeek = {
         labels: [
