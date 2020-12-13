@@ -804,8 +804,11 @@ export default {
       this.fillData()
     }
   },
-  async beforeCreate () {
-    await liff.init({ liffId: '1655371433-VdNEZGNE' })
+  created () {
+    liff.init({ liffId: '1655371433-VdNEZGNE' })
+      .then(() => {
+        if (!liff.isLoggedIn()) { liff.login() }
+      }).catch(err => console.log(err))
   },
   async mounted () {
     const profile = await liff.getProfile()
