@@ -13,9 +13,12 @@
   </div>
 </template>
 
+<script src="path/to/vconsole.min.js"></script>
 <script>
 import liff from '@line/liff'
 import LineChart from '../components/LineChart'
+
+const VConsole = new VConsole()
 
 export default {
   components: {
