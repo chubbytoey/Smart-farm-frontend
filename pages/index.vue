@@ -13,12 +13,9 @@
   </div>
 </template>
 
-<script src="path/to/vconsole.min.js"></script>
 <script>
 import liff from '@line/liff'
 import LineChart from '../components/LineChart'
-
-const VConsole = new VConsole()
 
 export default {
   components: {
@@ -811,8 +808,6 @@ export default {
     await liff.init({ liffId: '1655371433-VdNEZGNE' })
   },
   async mounted () {
-    if (!liff.isLoggedIn()) { liff.login() }
-
     const profile = await liff.getProfile()
     this.userId = profile.userId
     this.fetchData(this.userId)
