@@ -804,7 +804,7 @@ export default {
       this.fillData()
     }
   },
-  async beforeMount () {
+  async beforeCreate () {
     await liff.init({ liffId: '1655371433-VdNEZGNE' })
   },
   async mounted () {
