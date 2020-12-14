@@ -815,6 +815,10 @@ export default {
         })
       }).catch(err => console.log(err))
     console.log(this.$route.name)
+    if (this.$route.name !== 'index') {
+      console.log('hey')
+      this.$router.push(`/${this.$route.name}`)
+    }
   },
   methods: {
     fillData () {
