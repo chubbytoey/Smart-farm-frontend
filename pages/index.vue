@@ -803,6 +803,7 @@ export default {
     if (this.graph) {
       this.graph = 'temperature'
     }
+    alert(this.graph)
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
         if (!liff.isLoggedIn()) {
@@ -875,8 +876,6 @@ export default {
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
           // console.log('on', userID)
-          alert(JSON.stringify(this))
-          alert(JSON.stringify(self))
           self.farmUser = res.farm_id - 1
           self.fillData()
         })
