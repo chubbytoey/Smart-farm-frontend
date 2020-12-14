@@ -803,18 +803,16 @@ export default {
     if (this.graph) {
       this.graph = 'temperature'
     }
-    setTimeout(function () {
-      liff.init({ liffId: '1655371433-VdNEZGNE' })
-        .then(() => {
-          if (!liff.isLoggedIn()) {
-            liff.login()
-          } else {
-            liff.getProfile().then((profile) => {
-              self.fetchData(profile.userId)
-            }).catch(err => console.log(err))
-          }
-        }).catch(err => console.log(err))
-    }, 0)
+    liff.init({ liffId: '1655371433-VdNEZGNE' })
+      .then(() => {
+        if (!liff.isLoggedIn()) {
+          liff.login()
+        } else {
+          liff.getProfile().then((profile) => {
+            self.fetchData(profile.userId)
+          }).catch(err => console.log(err))
+        }
+      }).catch(err => console.log(err))
   },
   methods: {
     fillData () {
