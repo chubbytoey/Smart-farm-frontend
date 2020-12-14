@@ -803,16 +803,18 @@ export default {
     if (!this.graph) {
       this.graph = 'temperature'
     }
-    liff.init({ liffId: '1655371433-VdNEZGNE' })
-      .then(() => {
-        if (!liff.isLoggedIn()) {
-          liff.login()
-        } else {
-          liff.getProfile().then((profile) => {
-            self.fetchData(profile.userId)
-          }).catch(err => console.log(err))
-        }
-      }).catch(err => console.log(err))
+    setTimeout(function() {
+      liff.init({ liffId: '1655371433-VdNEZGNE' })
+        .then(() => {
+          if (!liff.isLoggedIn()) {
+            liff.login()
+          } else {
+            liff.getProfile().then((profile) => {
+              self.fetchData(profile.userId)
+            }).catch(err => console.log(err))
+          }
+        }).catch(err => console.log(err))
+    }, 0)
   },
   methods: {
     fillData () {
@@ -872,14 +874,13 @@ export default {
     },
     fetchData (userID) {
       const self = this
-
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
           // console.log('on', userID)
           self.farmUser = res.farm_id - 1
           self.fillData()
         }).catch((eero) => {
-          console.log(eero)
+          alert(eero)
         })
     }
   }
