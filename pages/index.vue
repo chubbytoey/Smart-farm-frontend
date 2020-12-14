@@ -5,7 +5,7 @@
       <LineChart :data="dataOneWeek" class="chart" :width="300" />
     </div>
     <div class="copyContainer">
-      <input id="copyText" type="text" value="https://liff.line.me/1655371433-VdNEZGNE">
+      <input id="copyText" type="text" :value="`https://liff.line.me/1655371433-VdNEZGNE?graph=${graph}`">
       <button @click="copyLink">
         Copy
       </button>
@@ -793,19 +793,16 @@ export default {
           }
         },
       dataOneWeek: null,
-      farmUser: null
-    }
-  },
-  watch: {
-    // userId () {
-    //   this.fetchData()
-    // },
-    farmUser () {
-      this.fillData()
+      farmUser: null,
+      graph: 'temperature'
     }
   },
   mounted () {
     const self = this
+    this.graph = this.$route.query.graph
+    if (this.graph) {
+      this.graph = 'temperature'
+    }
     setTimeout(function () {
       liff.init({ liffId: '1655371433-VdNEZGNE' })
         .then(() => {
@@ -814,14 +811,8 @@ export default {
           } else {
             alert('login')
             liff.getProfile().then((profile) => {
-              self.userId = profile.userId
-              alert('profile' + profile.userId)
-              alert(self.userId)
               self.fetchData(profile.userId)
-
-              if (self.$route.name !== 'index') {
-                self.$router.push(`/${self.$route.name}`)
-              }
+              self.fillData()
             }).catch(err => alert(err))
           }
         }).catch(err => alert(err))
@@ -869,11 +860,11 @@ export default {
       const apiData = this.rawDataOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
         if (input === 'max') {
-          dataMock.push(value.device[this.farmUser].temperature[0].max)
+          dataMock.push(value.device[this.farmUser][this.graph][0].max)
         } else if (input === 'min') {
-          dataMock.push(value.device[this.farmUser].temperature[0].min)
+          dataMock.push(value.device[this.farmUser][this.graph][0].min)
         } else {
-          dataMock.push(value.device[this.farmUser].temperature[0].avg)
+          dataMock.push(value.device[this.farmUser][this.graph][0].avg)
         }
       })
       return dataMock
