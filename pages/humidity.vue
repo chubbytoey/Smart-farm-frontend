@@ -811,10 +811,12 @@ export default {
 
         return liff.getProfile().then((profile) => {
           this.userId = profile.userId
+          alert('profile' + profile.userId)
+          alert(this.userId)
           this.fetchData(this.userId)
         })
-      }).catch(err => console.log(err))
-    console.log(this.$route.name)
+      }).catch(err => alert(err))
+    alert(this.$route.name)
   },
   methods: {
     fillData () {

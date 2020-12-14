@@ -808,11 +808,15 @@ export default {
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
         if (!liff.isLoggedIn()) { return liff.login() }
+
         return liff.getProfile().then((profile) => {
           this.userId = profile.userId
+          alert('profile' + profile.userId)
+          alert(this.userId)
           this.fetchData(this.userId)
         })
-      }).catch(err => console.log(err))
+      }).catch(err => alert(err))
+    alert(this.$route.name)
     if (this.$route.name !== 'index') {
       this.$router.push(`/${this.$route.name}`)
     }
