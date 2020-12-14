@@ -14,7 +14,7 @@
 </template>
 
 <script>
-// import liff from '@line/liff'
+import liff from '@line/liff'
 import LineChart from '../components/LineChart'
 
 export default {
@@ -805,16 +805,16 @@ export default {
     }
   },
   created () {
-    // liff.init({ liffId: '1655371433-VdNEZGNE' })
-    //   .then(() => {
-    //     if (!liff.isLoggedIn()) { return liff.login() }
+    liff.init({ liffId: '1655371433-VdNEZGNE' })
+      .then(() => {
+        if (!liff.isLoggedIn()) { return liff.login() }
 
-    //     return liff.getProfile().then((profile) => {
-    //       this.userId = profile.userId
-    //       this.fetchData(this.userId)
-    //     })
-    //   }).catch(err => console.log(err))
-    // console.log(this.$route.name)
+        return liff.getProfile().then((profile) => {
+          this.userId = profile.userId
+          this.fetchData(this.userId)
+        })
+      }).catch(err => console.log(err))
+    console.log(this.$route.name)
   },
   methods: {
     fillData () {
