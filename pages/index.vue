@@ -803,6 +803,7 @@ export default {
     if (this.graph) {
       this.graph = 'temperature'
     }
+    alert(this.$route.query)
     alert(this.graph)
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
