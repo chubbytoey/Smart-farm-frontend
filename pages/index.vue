@@ -809,7 +809,7 @@ export default {
       .then(() => {
         if (!liff.isLoggedIn()) { return liff.login() }
 
-        return liff.getProfile().then((profile) => {
+        liff.getProfile().then((profile) => {
           this.userId = profile.userId
           alert('profile' + profile.userId)
           alert(this.userId)
