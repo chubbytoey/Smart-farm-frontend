@@ -803,7 +803,7 @@ export default {
     if (this.graph) {
       this.graph = 'temperature'
     }
-    alert(this.$route.query)
+    alert(JSON.stringify(this.$route.query))
     alert(this.graph)
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
@@ -857,6 +857,8 @@ export default {
       const dataMock = []
       const apiData = this.rawDataOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
+        alert(this.graph)
+        alert(value.device[this.farmUser][this.graph])
         if (input === 'max') {
           dataMock.push(value.device[this.farmUser][this.graph][0].max)
         } else if (input === 'min') {
