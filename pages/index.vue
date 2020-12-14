@@ -290,7 +290,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 50,
                           avg: 80
                         }
                       ],
@@ -396,7 +396,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 120,
                           avg: 80
                         }
                       ],
@@ -502,7 +502,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 50,
                           avg: 80
                         }
                       ],
@@ -608,7 +608,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 420,
                           avg: 80
                         }
                       ],
@@ -714,7 +714,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 90,
                           avg: 80
                         }
                       ],

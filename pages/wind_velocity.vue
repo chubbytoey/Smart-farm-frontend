@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import liff from '@line/liff'
+// import liff from '@line/liff'
 import LineChart from '../components/LineChart'
 
 export default {
@@ -290,7 +290,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 50,
                           avg: 80
                         }
                       ],
@@ -396,7 +396,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 120,
                           avg: 80
                         }
                       ],
@@ -502,7 +502,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 50,
                           avg: 80
                         }
                       ],
@@ -608,7 +608,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 420,
                           avg: 80
                         }
                       ],
@@ -714,7 +714,7 @@ export default {
                         {
                           device_id: 1,
                           min: 50,
-                          max: 500,
+                          max: 90,
                           avg: 80
                         }
                       ],
@@ -858,11 +858,12 @@ export default {
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
         if (input === 'max') {
-          dataMock.push(value.device[this.farmUser].wind_velocity[0].max)
+          console.log('hey', value.device[0].wind_velocity[0].max)
+          dataMock.push(value.device[0].wind_velocity[0].max)
         } else if (input === 'min') {
-          dataMock.push(value.device[this.farmUser].wind_velocity[0].min)
+          dataMock.push(value.device[0].wind_velocity[0].min)
         } else {
-          dataMock.push(value.device[this.farmUser].wind_velocity[0].avg)
+          dataMock.push(value.device[0].wind_velocity[0].avg)
         }
       })
       return dataMock
