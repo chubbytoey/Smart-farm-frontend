@@ -807,6 +807,7 @@ export default {
   created () {
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
+        alert(liff.isLoggedIn())
         if (!liff.isLoggedIn()) { return liff.login() }
 
         liff.getProfile().then((profile) => {
