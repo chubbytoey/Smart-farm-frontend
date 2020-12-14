@@ -798,13 +798,11 @@ export default {
     }
   },
   mounted () {
-    const self = this
+    // const self = this
     this.graph = this.$route.query.graph
-    if (this.graph) {
+    if (!this.graph) {
       this.graph = 'temperature'
     }
-    alert(JSON.stringify(this.$route.query))
-    alert(this.graph)
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
         if (!liff.isLoggedIn()) {
@@ -857,8 +855,6 @@ export default {
       const dataMock = []
       const apiData = this.rawDataOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
-        alert(this.graph)
-        alert(value.device[this.farmUser][this.graph])
         if (input === 'max') {
           dataMock.push(value.device[this.farmUser][this.graph][0].max)
         } else if (input === 'min') {
