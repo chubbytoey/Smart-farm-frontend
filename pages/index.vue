@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="chartContainer">
-      <label v-if="userId">{{ userId }}</label>
+      <label v-if="userId">temperature</label>
       <LineChart :data="tempDataOneWeek" class="chart" :width="300" />
     </div>
     <div class="copyContainer">
