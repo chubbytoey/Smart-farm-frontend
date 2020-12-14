@@ -808,14 +808,13 @@ export default {
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
         if (!liff.isLoggedIn()) { return liff.login() }
+
         return liff.getProfile().then((profile) => {
           this.userId = profile.userId
           this.fetchData(this.userId)
         })
       }).catch(err => console.log(err))
-    if (this.$route.name !== 'index') {
-      this.$router.push(`/${this.$route.name}`)
-    }
+    console.log(this.$route.name)
   },
   methods: {
     fillData () {
@@ -859,11 +858,11 @@ export default {
       const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
         if (input === 'max') {
-          dataMock.push(value.device[this.farmUser].temperature[0].max)
+          dataMock.push(value.device[this.farmUser].wind_velocity[0].max)
         } else if (input === 'min') {
-          dataMock.push(value.device[this.farmUser].temperature[0].min)
+          dataMock.push(value.device[this.farmUser].wind_velocity[0].min)
         } else {
-          dataMock.push(value.device[this.farmUser].temperature[0].avg)
+          dataMock.push(value.device[this.farmUser].wind_velocity[0].avg)
         }
       })
       return dataMock
@@ -876,7 +875,7 @@ export default {
     fetchData (userID) {
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
-          // console.log('on', userID)
+          console.log('on', userID)
           this.farmUser = res.farm_id - 1
         })
     }
