@@ -2,7 +2,7 @@
   <div class="container">
     <div class="chartContainer">
       <label v-if="userId">temperature</label>
-      <LineChart :data="tempDataOneWeek" class="chart" :width="300" />
+      <LineChart :data="dataOneWeek" class="chart" :width="300" />
     </div>
     <div class="copyContainer">
       <input id="copyText" type="text" value="https://liff.line.me/1655371433-VdNEZGNE">
@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       userId: null,
-      tempRawOneWeek:
+      rawDataOneWeek:
         {
           status: 200,
           data: {
@@ -792,7 +792,7 @@ export default {
             }
           }
         },
-      tempDataOneWeek: null,
+      dataOneWeek: null,
       farmUser: null
     }
   },
@@ -819,7 +819,7 @@ export default {
   },
   methods: {
     fillData () {
-      this.tempDataOneWeek = {
+      this.dataOneWeek = {
         labels: [
           'day 1',
           'day 2',
@@ -856,7 +856,7 @@ export default {
     },
     fillDatasets (input) {
       const dataMock = []
-      const apiData = this.tempRawOneWeek.data.dataInOneWeek.data
+      const apiData = this.rawDataOneWeek.data.dataInOneWeek.data
       Object.values(apiData).forEach((value, key) => {
         if (input === 'max') {
           dataMock.push(value.device[this.farmUser].temperature[0].max)
