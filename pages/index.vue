@@ -804,7 +804,7 @@ export default {
       this.fillData()
     }
   },
-  created () {
+  mounted () {
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
         alert(liff.isLoggedIn())
@@ -815,7 +815,7 @@ export default {
           alert('profile' + profile.userId)
           alert(this.userId)
           this.fetchData(this.userId)
-        })
+        }).catch(err => alert(err))
       }).catch(err => alert(err))
     alert(this.$route.name)
     if (this.$route.name !== 'index') {
