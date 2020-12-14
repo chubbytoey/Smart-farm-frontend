@@ -814,7 +814,7 @@ export default {
           this.fetchData(this.userId)
         })
       }).catch(err => console.log(err))
-    console.log(this.$route.query)
+    console.log(this.$route.name)
   },
   methods: {
     fillData () {
@@ -875,7 +875,7 @@ export default {
     fetchData (userID) {
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
-          console.log('on', userID)
+          // console.log('on', userID)
           this.farmUser = res.farm_id - 1
         })
     }
