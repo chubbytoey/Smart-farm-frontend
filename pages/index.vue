@@ -872,11 +872,14 @@ export default {
     },
     fetchData (userID) {
       const self = this
+
       fetch(`https://mysterious-journey-03229.herokuapp.com/getfarm?user_id=${userID}`)
         .then(res => res.json()).then((res) => {
           // console.log('on', userID)
           self.farmUser = res.farm_id - 1
           self.fillData()
+        }).catch((eero) => {
+          console.log(eero)
         })
     }
   }
