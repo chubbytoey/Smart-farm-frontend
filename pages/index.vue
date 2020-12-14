@@ -805,6 +805,7 @@ export default {
     }
   },
   mounted () {
+    const self = this
     setTimeout(function () {
       liff.init({ liffId: '1655371433-VdNEZGNE' })
         .then(() => {
@@ -813,14 +814,15 @@ export default {
           } else {
             alert('login')
             liff.getProfile().then((profile) => {
-              this.userId = profile.userId
+              self.userId = profile.userId
               alert('profile' + profile.userId)
-              alert(this.userId)
-              this.fetchData(profile.userId)
+              alert(self.userId)
+              self.fetchData(profile.userId)
+
+              if (self.$route.name !== 'index') {
+                self.$router.push(`/${self.$route.name}`)
+              }
             }).catch(err => alert(err))
-            if (this.$route.name !== 'index') {
-              this.$router.push(`/${this.$route.name}`)
-            }
           }
         }).catch(err => alert(err))
     }, 0)
