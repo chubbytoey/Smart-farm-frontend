@@ -798,7 +798,7 @@ export default {
     }
   },
   mounted () {
-    // const self = this
+    const self = this
     this.graph = this.$route.query.graph
     if (!this.graph) {
       this.graph = 'temperature'
