@@ -804,23 +804,23 @@ export default {
       this.fillData()
     }
   },
-  mounted () {
+  mounted() {
     liff.init({ liffId: '1655371433-VdNEZGNE' })
       .then(() => {
-        alert(liff.isLoggedIn())
-        if (!liff.isLoggedIn()) { return liff.login() }
-        alert('eiei')
-        liff.getProfile().then((profile) => {
-          this.userId = profile.userId
-          alert('profile' + profile.userId)
-          alert(this.userId)
-          this.fetchData(this.userId)
-        }).catch(err => alert(err))
+        if (!liff.isLoggedIn()) {
+          liff.login()
+        } else {
+          liff.getProfile().then((profile) => {
+            this.userId = profile.userId
+            alert('profile' + profile.userId)
+            alert(this.userId)
+            this.fetchData(profile.userId)
+          }).catch(err => alert(err))
+          if (this.$route.name !== 'index') {
+            this.$router.push(`/${this.$route.name}`)
+          }
+        }
       }).catch(err => alert(err))
-    alert(this.$route.name)
-    if (this.$route.name !== 'index') {
-      this.$router.push(`/${this.$route.name}`)
-    }
   },
   methods: {
     fillData () {
