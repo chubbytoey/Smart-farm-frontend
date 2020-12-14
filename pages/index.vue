@@ -814,6 +814,7 @@ export default {
           this.fetchData(this.userId)
         })
       }).catch(err => console.log(err))
+    console.log(this.$route.query)
   },
   methods: {
     fillData () {
