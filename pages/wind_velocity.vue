@@ -14,7 +14,7 @@
 </template>
 
 <script>
-// import liff from '@line/liff'
+import liff from '@line/liff'
 import LineChart from '../components/LineChart'
 
 export default {
