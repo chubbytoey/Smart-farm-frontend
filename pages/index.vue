@@ -804,23 +804,26 @@ export default {
       this.fillData()
     }
   },
-  mounted() {
-    liff.init({ liffId: '1655371433-VdNEZGNE' })
-      .then(() => {
-        if (!liff.isLoggedIn()) {
-          liff.login()
-        } else {
-          liff.getProfile().then((profile) => {
-            this.userId = profile.userId
-            alert('profile' + profile.userId)
-            alert(this.userId)
-            this.fetchData(profile.userId)
-          }).catch(err => alert(err))
-          if (this.$route.name !== 'index') {
-            this.$router.push(`/${this.$route.name}`)
+  mounted () {
+    setTimeout(function () {
+      liff.init({ liffId: '1655371433-VdNEZGNE' })
+        .then(() => {
+          if (!liff.isLoggedIn()) {
+            liff.login()
+          } else {
+            alert('login')
+            liff.getProfile().then((profile) => {
+              this.userId = profile.userId
+              alert('profile' + profile.userId)
+              alert(this.userId)
+              this.fetchData(profile.userId)
+            }).catch(err => alert(err))
+            if (this.$route.name !== 'index') {
+              this.$router.push(`/${this.$route.name}`)
+            }
           }
-        }
-      }).catch(err => alert(err))
+        }).catch(err => alert(err))
+    }, 0)
   },
   methods: {
     fillData () {
